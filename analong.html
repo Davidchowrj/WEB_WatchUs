@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <style>
-	*{
+	/* "*"it is the universal Selector meaning it applied to all <div><body><button>*/
+	*{			
 		margin:0px;
 		padding:0px;
 	}
@@ -47,11 +48,28 @@
 	.menu ul ul li{
 		display:block;
 	}
+	.wallpaper {
+		text-align:center;
+	}
+	#logo{
+		float:right;
+	}
+	h2 {
+   		width: 100%; 
+   		text-align: center; 
+   		border-bottom: 1px solid #000; 
+   		line-height: 0.1em;
+   		margin: 10px 0 20px; 
+    }
+	h2 span { 
+   		background:#fff; 
+    	padding:0 10px; 
+	}
 </style>
 <title> Analog watches </title>
 </head>
 <body>
-
+<img id="logo" src="./images/WatchUSLOGO2.1.PNG" alt="logo" width="153" height="86">
 <nav class="menu">
 <ul>
 	<li><a>Home</a></li>
@@ -65,9 +83,29 @@
 	<li><a>About</a></li>
 	<li><a>Service</a></li>
 	<li><a>Cart</a></li>
-</ul>
 </nav>
-
+<div Class="wallpaper">
+	<img id="timelinePhoto" src="./images/wallpaper1-2.jpg" alt="wallpaper" width="1366" height="300">
+</div>
+<h2><span>Analog</span></h2>
+<div>
+      <div id="main">
+	  <main>
+	  <div class="columns" stles="padding-left:600">
+         <ul class="price">
+		 <li><img id="myImg" src="./images/download(1).jpg" alt="CityScape" width="122" height="176"></li>
+		 <div id="myCity" class="CityScape">
+			<span class="close">&times;</span>
+			<img class="CityScape-content" id="img01">
+			<div id="caption"></div>
+		</div>
+		
+                
+        </ul>
+		
+      </div>
+  </main>
+</div>
 
 
 </body>
