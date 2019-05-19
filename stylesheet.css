@@ -10,10 +10,40 @@
     background-size: cover;
 }
 
+/* Styling carousel caption*/
+
+.carousel {
+    margin-bottom: 4rem;
+  }
+  
+
+.carousel-item{
+    height: 50rem;
+}
+
+.carousel-caption {
+    bottom: 50px;
+    z-index: 10;
+}
+
+  
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 50rem;
+  }
+  
 
 .dropdown-menu{
     background-color: #e7e7e7;
 }
+
+.dropdown-menu .dropdown-item:active{
+    background-color:#d35536;
+}
+
 
 .navbar-light .navbar-brand {
     color: #ffffff;
