@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Services</title>
-<link rel="stylesheet" type="text/css" href="service.css">
-</head>
-<body scroll="no" style="overflow:hidden">
-<div class="top">
-<img id="logo" src="./images/WatchUSLOGO2.1.PNG" alt="logo" width="153" height="86">
-<nav class="menu">
-<ul>
-	<li><a href="signin.php">Home</a></li>
-	<li><a>Collection</a>
-		<ul>
-			<li><a>Analog Watch</a></li>
-			<li><a>Digital Watch</a></li>
-			<li><a>Smart Watch</a></li>
-		</ul>
-	</li>
-	<li><a>About</a></li>
-	<li><a href="service.php">Service</a></li>
-	<li><a>Cart</a></li>
-</ul>
-</nav>
+
 <h1 class="serviceHeader">Services</h1>
 </div>
 <div class="container">

@@ -1,9 +1,13 @@
 <?php
-include "header.php";
+
 $title = "WatchUS Incorporated";
-$currentPage = "Home";
+$page = "home";
+include "view/header.php";
 
 ?>
+
+<div class="main">
+
 <!-- Highlight section of the homepage-->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" keyboard="true" interval="4250">
     <ol class="carousel-indicators">
@@ -15,7 +19,7 @@ $currentPage = "Home";
     <div class="carousel-inner">
         <div class="carousel-item active">
             <a href="#">
-                <img src="../images/carousel1.jpg" class="img-fluid d-block" alt="Smart watches">
+                <img src="images/carousel1.jpg" class="img-fluid d-block" alt="Smart watches">
             </a>
             <div class="container">
                 <div class="carousel-caption d-none d-md-block text-xl-right">
@@ -27,7 +31,7 @@ $currentPage = "Home";
         </div>
         <div class="carousel-item">
             <a href="#">
-                <img src="../images/carousel2.jpg" class="img-fluid d-block w-100" alt="Digital watches">
+                <img src="images/carousel2.jpg" class="img-fluid d-block w-100" alt="Digital watches">
             </a>
             <div class="container">
                 <div class="carousel-caption d-none d-md-block text-xl-right">
@@ -39,7 +43,7 @@ $currentPage = "Home";
         </div>
         <div class="carousel-item">
             <a href="#">
-                <img src="../images/carousel3.jpg" class="img-fluid d-block " alt="Analog watches">
+                <img src="images/carousel3.jpg" class="img-fluid d-block " alt="Analog watches">
             </a>
             <div class="container">
                 <div class="carousel-caption d-none d-md-block text-xl-right">
@@ -59,11 +63,12 @@ $currentPage = "Home";
         <span class="sr-only">Next</span>
     </a>
 </div>
+</div>
 
 
 
 <div class="container about">
-    <h1 class="text-center" id="About"> About Us</h1>
+    <h1 class="text-center" id="about"> About Us</h1>
     <div class="row">
         <div class="col-lg-12">
             <p> uis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
@@ -115,6 +120,6 @@ $currentPage = "Home";
 
 <?php
 
-include 'footer.php';
+include 'view/footer.php';
 
 ?>
