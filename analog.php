@@ -22,111 +22,89 @@ include "view/header.php";
 </section>
 
 
+<!-- Product Layout -->
 <div class="main">
     <div class="container product">
-        <h1 class="text-left"> Men's Analog Watches</h1>
+        <h1 class="text-left mt-5 mb-0 "> Men's Analog Watches</h1>
+        <hr class="bg-primary mb-2 mt-0 d-inline-block mx-auto w-50"> 
         <div class="row">
-            <div class="col-lg-12">
-                <h2> Select an Analog Watch to Purchase or Gift One Today!</h2>
+            <div class="col-lg-12 mb-5">
             </div>
         </div>
 
-        <!-- Product Layout --->
         <div class="row">
-            <div class="col-lg-4">
-                <img src="./images/download3.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card h-100" style= "border: 0px" > 
+                    <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                    <div class="card-body">
+                        <h4 class="card-title">Watch</h4>
+                        <p class="card-text">Bla Bla short description</p>
+                        <a class="btn btn-primary stretched-link" href="#">View all</a>
+                    </div>
+                </div>
             </div>
 
 
-            <div class="col-lg-4">
-                <img src="./images/download3.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card h-100" style= "border: 0px">
+                    <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                    <div class="card-body">
+                        <h4 class="card-title">Watch</h4>
+                        <p class="card-text">Bla Bla short description</p>
+                        <a class="btn btn-primary stretched-link" href="#">View all</a>
+                    </div>
+                </div>
             </div>
 
 
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card h-100" style= "border: 0px">
+                    <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                    <div class="card-body">
+                        <h4 class="card-title">Watch</h4>
+                        <p class="card-text">Bla Bla short description</p>
+                        <a class="btn btn-primary stretched-link" href="#">View all</a>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col-lg-4">
-                <img src="./images/download3.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card h-100" style= "border: 0px">
+                    <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                    <div class="card-body">
+                        <h4 class="card-title">Watch</h4>
+                        <p class="card-text">Bla Bla short description</p>
+                        <a class="btn btn-primary stretched-link" href="#">View all</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card h-100" style= "border: 0px">
+                    <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                    <div class="card-body">
+                        <h4 class="card-title">Watch</h4>
+                        <p class="card-text">Bla Bla short description</p>
+                        <a class="btn btn-primary stretched-link" href="#">View all</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card h-100" style= "border: 0px">
+                    <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                    <div class="card-body">
+                        <h4 class="card-title">Watch</h4>
+                        <p class="card-text">Bla Bla short description</p>
+                        <a class="btn btn-primary stretched-link" href="#">View all</a>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-
-        <div class="row">
-            <div class="col-lg-4">
-                <img src="./images/download4.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
-            </div>
-
-
-
-            <div class="col-lg-4">
-                <img src="./images/download4.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
-            </div>
-
-
-            <div class="col-lg-4">
-                <img src="./images/download4.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
-            </div>
-        </div>
-        
-      
-      
-        <div class="row">
-            <div class="col-lg-4">
-                <img src="./images/download5.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
-            </div>
-
-
-
-            <div class="col-lg-4">
-                <img src="./images/download5.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
-            </div>
-
-
-            <div class="col-lg-4">
-                <img src="./images/download5.jpg" alt="Watch1" width="265" height="320">
-                <h2>Watch <br>
-                    <small> RM 50.00 </small>
-                </h2>
-                <p><a class="btn btn-primary" href="#" role="button">Add to Cart </a></p>
-            </div>
-        </div>
-
-
-
     </div>
-</div>
 
 
 
@@ -135,8 +113,8 @@ include "view/header.php";
 
 
 
-<?php
+    <?php
 
-include 'view/footer.php';
+    include 'view/footer.php';
 
-?>
+    ?>
