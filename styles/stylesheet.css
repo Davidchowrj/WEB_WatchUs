@@ -176,3 +176,13 @@
             font-weight: 400;
             font-weight: var(--weight-regular);
         }
+        /* Services section */
+        
+        .service {
+            position: relative;
+            background-color: black;
+            height: 75vh;
+            min-height: 25rem;
+            width: 100%;
+            overflow: hidden;
+        }

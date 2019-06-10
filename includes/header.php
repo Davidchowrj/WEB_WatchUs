@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <title>
@@ -14,12 +15,15 @@
         }
 
         ?>
+
     </title>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./theme.css">
-    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./styles/theme.css">
+    <link rel="stylesheet" href="./styles/stylesheet.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 <body>
@@ -33,7 +37,9 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                <li class="<?php if($page=='home'){echo 'active';}?>">
+                    <li class="<?php if ($page == 'home') {
+                                    echo 'active';
+                                } ?>">
                         <a class="nav-link" href="./index.php">Home </a>
                     </li>
                     <li class="nav-item dropdown">
@@ -46,13 +52,19 @@
                             <a class="dropdown-item" href="./analog.php">Analog Watches</a>
                         </div>
                     </li>
-                    <li class="<?php if($page=='about'){echo 'active';}?>">
+                    <li class="<?php if ($page == 'about') {
+                                    echo 'active';
+                                } ?>">
                         <a class="nav-link" href="./index.php#about">About</a>
                     </li>
-                    <li class="<?php if($page=='services'){echo 'active';}?>">
+                    <li class="<?php if ($page == 'services') {
+                                    echo 'active';
+                                } ?>">
                         <a class="nav-link" href="./services.php">Services</a>
                     </li>
-                    <li class="<?php if($page=='cart'){echo 'active';}?>">
+                    <li class="<?php if ($page == 'cart') {
+                                    echo 'active';
+                                } ?>">
                         <a class="nav-link" href="#">Cart</a>
                     </li>
                     <li class="nav-item">

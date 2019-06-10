@@ -1,7 +1,7 @@
 <!-- Content Divider-->
 <footer class="text-dark bg-light mt-5">
-  
-<hr class="bg-light mb-1 mt-0 d-block mx-auto w-100">
+
+  <hr class="bg-light mb-1 mt-0 d-block mx-auto w-100">
   <div class="container">
     <div class="row">
 
@@ -9,24 +9,13 @@
         <h5 class="mt-3">Products</h5>
         <hr class="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25">
         <ul class="list-unstyled">
-          <li><a href="">Link 1</a></li>
-          <li><a href="">Link 2</a></li>
-          <li><a href="">Link 3</a></li>
-          <li><a href="">Link 4</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-4 col-lg-4 col-xl-2 mx-auto">
-        <h5 class="mt-3">Products</h5>
-        <hr class="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25">
-        <ul class="list-unstyled">
           <li><a href="">Smart Watches</a></li>
           <li><a href="">Digital Watches</a></li>
-          <li><a href="">Analog Watches</a></li>
+          <li><a href="./analog.php">Analog Watches</a></li>
         </ul>
       </div>
 
-      
+
       <div class="col-md-4 col-lg-4 col-xl-2 mx-auto">
         <h5 class="mt-3">Services</h5>
         <hr class="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25">
@@ -48,8 +37,8 @@
         </ul>
       </div>
       <div class="col-12 copyright mt-3">
-        
-        <p class="float-left">&copy; 2018-2019 WatchUS, Inc. &middot; <a href="#About">About</a> &middot; <a href="#"></a></p>
+
+        <p class="float-left">&copy; 2018-2019 WatchUS, Inc. &middot; <a href="./index.php#About">About</a> &middot; <a href="#"></a></p>
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
@@ -73,6 +62,8 @@
     $('nav').toggleClass('scrolled', $(this).scrollTop() > 450);
   });
 </script>
+
+
 
 </body>
 

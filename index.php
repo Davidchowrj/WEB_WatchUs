@@ -1,8 +1,8 @@
 <?php
 
-$title = "WatchUS Incorporated";
-$page = "home";
-include "view/header.php";
+$title = "WatchUs Incorporated";
+$page = "index";
+include "includes/header.php";
 
 ?>
 
@@ -67,8 +67,8 @@ include "view/header.php";
 
 
 
-<div class="container about">
-    <h1 class="text-center" id="about"> About Us</h1>
+<div class="container about" id="about">
+    <h1 class="text-center"> About Us</h1>
     <div class="row">
         <div class="col-lg-12">
             <p> uis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
@@ -120,6 +120,6 @@ include "view/header.php";
 
 <?php
 
-include 'view/footer.php';
+include 'includes/footer.php';
 
 ?>
