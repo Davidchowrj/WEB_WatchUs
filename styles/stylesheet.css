@@ -176,13 +176,16 @@
             font-weight: 400;
             font-weight: var(--weight-regular);
         }
-        /* Services section */
         
-        .service {
-            position: relative;
-            background-color: black;
-            height: 75vh;
-            min-height: 25rem;
-            width: 100%;
-            overflow: hidden;
+        .masthead {
+            height: 50vh;
+            min-height: 500px;
+            background-image: url('https://www.bellross.com/catalog/view/theme/bell_n_ross/images/after_sales_service.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .masthead .container h1 {
+            font-size: 60px;
         }
