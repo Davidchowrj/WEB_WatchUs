@@ -30,14 +30,14 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-transparent fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#"><img src="./images/WATCHUSLOGO2.1.PNG" alt="logo" width="100" height="auto" class="d-inline-block align-middle">WatchUS</a>
+                <a class="navbar-brand" href="./index.php"><img src="./images/WATCHUSLOGO2.1.PNG" alt="logo" width="100" height="auto" class="d-inline-block align-middle">WatchUS</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="<?php if ($page == 'home') {
+                    <li class="<?php if ($page == 'index') {
                                     echo 'active';
                                 } ?>">
                         <a class="nav-link" href="./index.php">Home </a>
@@ -47,9 +47,9 @@
                             Collection
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Smart Watches</a>
-                            <a class="dropdown-item" href="#">Digital Watches</a>
-                            <a class="dropdown-item" href="./analog.php">Analog Watches</a>
+                        	<a class="dropdown-item" href="./analog.php">Analog Watches</a>
+                            <a class="dropdown-item" href="./smartWatch.php">Smart Watches</a>
+                            <a class="dropdown-item" href="./DigitalWatch.php">Digital Watches</a>
                         </div>
                     </li>
                     <li class="<?php if ($page == 'about') {

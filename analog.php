@@ -38,7 +38,7 @@ include "includes/header.php";
             <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card h-100 border-0">
                     <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                        <img class="card-img-top img-fluid" src="./images/download1.png" alt="img">
                     </a>
                     <div class="card-body">
                         <h4 class="card-title">Watch</h4>
@@ -51,21 +51,7 @@ include "includes/header.php";
             <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card h-100 border-0">
                     <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
-                    </a>
-                    <div class="card-body">
-                        <h4 class="card-title">Watch</h4>
-                        <p class="card-text">Bla Bla short description</p>
-                        <a class="btn btn-primary" href="#">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                <div class="card h-100 border-0">
-                    <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                        <img class="card-img-top img-fluid" src="./images/download2.jpg" alt="img">
                     </a>
                     <div class="card-body">
                         <h4 class="card-title">Watch</h4>
@@ -79,7 +65,7 @@ include "includes/header.php";
             <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card h-100 border-0">
                     <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                        <img class="card-img-top img-fluid" src="./images/download3.jpg" alt="img">
                     </a>
                     <div class="card-body">
                         <h4 class="card-title">Watch</h4>
@@ -93,7 +79,7 @@ include "includes/header.php";
             <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card h-100 border-0">
                     <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                        <img class="card-img-top img-fluid" src="./images/download4.jpg" alt="img">
                     </a>
                     <div class="card-body">
                         <h4 class="card-title">Watch</h4>
@@ -107,7 +93,21 @@ include "includes/header.php";
             <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card h-100 border-0">
                     <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="http://via.placeholder.com/265x350" alt="img">
+                        <img class="card-img-top img-fluid" src="./images/download5.jpg" alt="img">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title">Watch</h4>
+                        <p class="card-text">Bla Bla short description</p>
+                        <a class="btn btn-primary" href="#">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <div class="card h-100 border-0">
+                    <a href="#" class="pop">
+                        <img class="card-img-top img-fluid" src="./images/download6.jpg" alt="img">
                     </a>
                     <div class="card-body">
                         <h4 class="card-title">Watch</h4>
