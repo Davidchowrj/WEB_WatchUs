@@ -5,29 +5,6 @@ $db_handle = new DBController();
 $title = "Smart Watches | WatchUS";
 $page = "analog";
 include "includes/header.php";
-if(!empty($_GET["action"])) {
-    switch($_GET["action"]) {
-        case "add":
-            if(!empty($_POST["quantity"])) {
-                $productByCode = $db_handle->runQuery("SELECT * FROM product WHERE code='" . $_GET["code"] . "'");
-                $itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"]));
-                
-                if(!empty($_SESSION["cart_item"])) {
-                    if(in_array($productByCode[0]["code"],$_SESSION["cart_item"])) {
-                        foreach($_SESSION["cart_item"] as $k => $v) {
-                            if($productByCode[0]["code"] == $k)
-                                $_SESSION["cart_item"][$k]["quantity"] = $_POST["quantity"];
-                        }
-                    } else {
-                        $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
-                    }
-                } else {
-                    $_SESSION["cart_item"] = $itemArray;
-                }
-            }
-            break;
-    }
-}
 ?>
 
 <!-- Video display section -->
@@ -60,20 +37,20 @@ if(!empty($_GET["action"])) {
 
         <div class="row">
         <?php
-	    $product_array = $db_handle->runQuery("SELECT * FROM smartwatch ORDER BY id ASC");
+	    $product_array = $db_handle->runQuery("SELECT * FROM product WHERE code LIKE 'SW%' ORDER BY id ASC");
 	    if (!empty($product_array)) { 
 		  foreach($product_array as $key=>$value){
 	   ?>
             <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card h-100 border-0">
-                <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+                <form method="post" action="cart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
                     <a href="#" class="pop">
                         <img class="card-img-top img-fluid" src="<?php echo $product_array[$key]["image"]; ?>">
                     </a>
                     <div class="card-body">
                         <h4 class="card-title"><?php echo $product_array[$key]["name"]; ?></h4>
                         <p class="card-text"><?php echo "RM ".$product_array[$key]["price"]; ?></p>
-                        <div><input type="submit" value="Add to Cart" class="btn btn-primary"/></div>
+                        <div><input type="text" name="quantity" value="1" size="2" /><p></p><input type="submit" value="Add to Cart" class="btn btn-primary"/></div>
                     </div>
                 </form>
                 </div>
