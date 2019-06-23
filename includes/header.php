@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="./styles/stylesheet.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
+
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-transparent fixed-top">
@@ -66,11 +68,16 @@
                                     echo 'active';
                                 } ?>">
                         <a class="nav-link" href="#">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> Login </a>
+                    </li >
+                    <li class="<?php if ($page == 'login') {
+                                    echo 'active';
+                                } ?>">
+                                
+                        <a class="nav-link" <?php if(isset($_SESSION['login_user'])){ echo($_SESSION['login_user']); } ?> href="signin.php"> Login </a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
+
+

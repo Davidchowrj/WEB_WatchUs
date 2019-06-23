@@ -1,6 +1,5 @@
 <!-- Content Divider-->
-<footer class="text-dark bg-light mt-5">
-
+<footer class="text-dark bg-light">
   <hr class="bg-light mb-1 mt-0 d-block mx-auto w-100">
   <div class="container">
     <div class="row">
@@ -31,9 +30,9 @@
         <h5 class="mt-3">Contact</h5>
         <hr class="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25">
         <ul class="list-unstyled">
-          <li><i class="fa fa-home mr-2"></i> My company</li>
-          <li><i class="fa fa-envelope mr-2"></i> email@example.com</li>
-          <li><i class="fa fa-phone mr-2"></i> + 33 12 14 15 16</li>
+          <li><i class="fa fa-home mr-2"></i> WatchUs Incorporated </li>
+          <li><i class="fa fa-envelope mr-2"></i>  inquiries@WatchUs.com </li>
+          <li><i class="fa fa-phone mr-2"></i> + (60)3-12345678</li>
         </ul>
       </div>
       <div class="col-12 copyright mt-3">

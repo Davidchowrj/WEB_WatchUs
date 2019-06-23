@@ -7,7 +7,6 @@ include "includes/header.php";
 ?>
 
 <div class="main">
-
     <!-- Highlight section of the homepage-->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" keyboard="true" interval="4250">
         <ol class="carousel-indicators">
@@ -67,7 +66,7 @@ include "includes/header.php";
 
 
 
-<div class="container about" id="about">
+<div class="container about pb-5" id="about">
     <h1 class="text-center"> About Us</h1>
     <div class="row">
         <div class="col-lg-12">

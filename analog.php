@@ -25,7 +25,7 @@ include "includes/header.php";
 
 
 <!-- Product Layout -->
-<div class="main">
+<div class="main pb-5">
     <div class="container product">
         <h1 class="text-left mt-5 mb-0 "> Analog Watches</h1>
         <hr class="bg-primary mb-2 mt-0 d-inline-block mx-auto w-25">
