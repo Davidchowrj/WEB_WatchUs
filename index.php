@@ -24,7 +24,7 @@ include "includes/header.php";
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-xl-right">
                         <h2 class="display-3"> Smart watches</h2>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Shop Now</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="./smartWatch.php" role="button">Shop Now</a></p>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@ include "includes/header.php";
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-xl-right">
                         <h2 class="display-3"> Digital Watches</h2>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Shop Now</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="./DigitalWatch.php" role="button">Shop Now</a></p>
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@ include "includes/header.php";
                 <div class="container">
                     <div class="carousel-caption d-none d-md-block text-xl-right">
                         <h2 class="display-3">Analog Watches</h2>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Shop Now</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="./analog.php" role="button">Shop Now</a></p>
                     </div>
                 </div>
 
