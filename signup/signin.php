@@ -1,3 +1,4 @@
+<?php session_start();  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,12 +21,14 @@
 	<li><a>About</a></li>
 	<li><a href="service.php">Service</a></li>
 	<li><a>Cart</a></li>
+	<li><?php if(isset($_SESSION['login_user'])){ echo($_SESSION['login_user']); } ?></li>
+	<li><a href="logout.php">Logout</a></li>
 </ul>
 </nav>
 <div class="form">
 <div class="sign">
 	<h1>Sign in</h1>
-	<form action="" method="post">
+	<form method="post">
 		<input type="email" name="email" id="email" value="" placeholder="Email" style="width:300px; height:30px" required="required">
 		<br><br><br>
 		<input type="password" name="password" id="password" value="" placeholder="Password" style="width:300px; height:30px" required="required">
@@ -51,30 +54,31 @@
 </div>
 </div>
 <?php
+if (isset($_POST['signin'])) {
 
-
-if(isset($_POST['signin'])){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "db";
+    require('mysqli_connect.php');
     
-    //Create connection 
-    $conn = new mysqli($servername,$username,$password,$dbname);
+    if(!$db){
+        echo 'Connected failure<br>';
+    }else{
     
-    
-    
-    $sql = 'SELECT * FROM table3 WHERE email="$email" AND password="$password"';
-   
-    if (mysqli_query($conn,$sql)) {
-           
-            echo "Sign in successful.<br>";
-    } else{
-        echo "Email or Password is wrong.";
+    echo 'Connected successfully<br>';
     }
-    
-    mysqli_close($conn);
+    session_start();
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $_SESSION['login_user'] = $email;
+
+    $query = mysqli_query($db, "SELECT email FROM table3 WHERE email='$email' and password='$password'");
+    if (mysqli_num_rows($query) != 0) {
+        echo "<script language='javascript' type='text/javascript'> location.href = 'home.php'</script>";
+    } else {
+        echo "<script type='text/javascript'>alert('Username or Password Invalid!')</script>";
+    }
 }
+    
 
 
 
