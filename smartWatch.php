@@ -1,9 +1,33 @@
 <?php
-
+session_start();
+require_once("dbcontroller.php");
+$db_handle = new DBController();
 $title = "Smart Watches | WatchUS";
 $page = "analog";
 include "includes/header.php";
-
+if(!empty($_GET["action"])) {
+    switch($_GET["action"]) {
+        case "add":
+            if(!empty($_POST["quantity"])) {
+                $productByCode = $db_handle->runQuery("SELECT * FROM product WHERE code='" . $_GET["code"] . "'");
+                $itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"]));
+                
+                if(!empty($_SESSION["cart_item"])) {
+                    if(in_array($productByCode[0]["code"],$_SESSION["cart_item"])) {
+                        foreach($_SESSION["cart_item"] as $k => $v) {
+                            if($productByCode[0]["code"] == $k)
+                                $_SESSION["cart_item"][$k]["quantity"] = $_POST["quantity"];
+                        }
+                    } else {
+                        $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+                    }
+                } else {
+                    $_SESSION["cart_item"] = $itemArray;
+                }
+            }
+            break;
+    }
+}
 ?>
 
 <!-- Video display section -->
@@ -35,76 +59,31 @@ include "includes/header.php";
         </div>
 
         <div class="row">
+        <?php
+	    $product_array = $db_handle->runQuery("SELECT * FROM smartwatch ORDER BY id ASC");
+	    if (!empty($product_array)) { 
+		  foreach($product_array as $key=>$value){
+	   ?>
             <div class="col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card h-100 border-0">
+                <form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
                     <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="./images/smart1.jpg" alt="img">
+                        <img class="card-img-top img-fluid" src="<?php echo $product_array[$key]["image"]; ?>">
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">Watch</h4>
-                        <p class="card-text">Bla Bla short description</p>
-                        <a class="btn btn-primary" href="#">Add to Cart</a>
+                        <h4 class="card-title"><?php echo $product_array[$key]["name"]; ?></h4>
+                        <p class="card-text"><?php echo "RM ".$product_array[$key]["price"]; ?></p>
+                        <div><input type="submit" value="Add to Cart" class="btn btn-primary"/></div>
                     </div>
+                </form>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                <div class="card h-100 border-0">
-                    <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="./images/smart2.jpg" alt="img">
-                    </a>
-                    <div class="card-body">
-                        <h4 class="card-title">Watch</h4>
-                        <p class="card-text">Bla Bla short description</p>
-                        <a class="btn btn-primary" href="#">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                <div class="card h-100 border-0">
-                    <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="./images/smart3.jpg" alt="img">
-                    </a>
-                    <div class="card-body">
-                        <h4 class="card-title">Watch</h4>
-                        <p class="card-text">Bla Bla short description</p>
-                        <a class="btn btn-primary" href="#">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                <div class="card h-100 border-0">
-                    <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="./images/smart4.jpg" alt="img">
-                    </a>
-                    <div class="card-body">
-                        <h4 class="card-title">Watch</h4>
-                        <p class="card-text">Bla Bla short description</p>
-                        <a class="btn btn-primary" href="#">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                <div class="card h-100 border-0">
-                    <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="./images/smart5.jpg" alt="img">
-                    </a>
-                    <div class="card-body">
-                        <h4 class="card-title">Watch</h4>
-                        <p class="card-text">Bla Bla short description</p>
-                        <a class="btn btn-primary" href="#">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
+            <?php 
+		      }
+        }
+        ?>
         </div>
-     </div>
-
+    </div>
 
 
     <!-- Image popup section -->
