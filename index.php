@@ -3,7 +3,6 @@
 $title = "WatchUs Incorporated";
 $page = "index";
 include "includes/header.php";
-require_once "signup/createdb.php";
 
 ?>
 
@@ -71,41 +70,15 @@ require_once "signup/createdb.php";
     <h1 class="text-center"> About Us</h1>
     <div class="row">
         <div class="col-lg-12">
-<<<<<<< HEAD
-            <p class="lead text-center"> A passionate start up set on delivering the world's best curation of 
-                selected watches ranging from three different types right to your doorstep with the 
-                utmost best of both customer support and after sales service. 
-=======
             <p class="lead text-center"> A passionate start up set on delivering the world's best curation of
                 selected watches ranging from three different types right to your doorstep with the
                 utmost best of both customer support and after sales service.
->>>>>>> meng
                 <br>Based in Malaysia and providing world wide delivery 24/7.
             </p>
         </div>
     </div>
 
     <div class="row my-5">
-<<<<<<< HEAD
-        <div class="col-lg-4">
-            <img class="rounded-circle" src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>David Chow</h2>
-            <h3> CTO </h3>
-       
-
-        </div>
-        <div class="col-lg-4">
-            <img class="rounded-circle" src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>Wong Meng Leong</h2>
-            <h3> CEO </h3>
-        
-        </div>
-        <div class="col-lg-4">
-            <img class="rounded-circle" src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>Lee Chee Shuen</h2>
-            <h3> CFO </h3>
-      
-=======
         <div class="col-lg-4">
             <img class="rounded-circle" src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Generic placeholder image" width="140" height="140">
             <h2>David Chow</h2>
@@ -163,7 +136,6 @@ require_once "signup/createdb.php";
             <p class="text-left mx-2">A gentleman's choice of timepiece says a lot about him. It is an extension of him, as it epitomises his personality,
                 values, and style. So it comes as no surprise that many of the world's most influential men
             </p>
->>>>>>> meng
 
         </div>
     </div>
