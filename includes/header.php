@@ -49,9 +49,9 @@
                             Collection
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Smart Watches</a>
-                            <a class="dropdown-item" href="#">Digital Watches</a>
-                            <a class="dropdown-item" href="./analog.php">Analog Watches</a>
+                        	<a class="dropdown-item" href="./analog.php">Analog Watches</a>
+                            <a class="dropdown-item" href="./smartWatch.php">Smart Watches</a>
+                            <a class="dropdown-item" href="./DigitalWatch.php">Digital Watches</a>
                         </div>
                     </li>
                     <li class="<?php if ($page == 'about') {
