@@ -15,7 +15,7 @@ if(!$conn){
 }
 
 echo 'Connected successfully<br>';
-$sql = "DROP DATABASE db";
+$sql = "DROP DATABASE WatchUs";
 
 if (mysqli_query($conn,$sql)){
     echo "Database dropped successfully";

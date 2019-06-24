@@ -72,8 +72,7 @@
                     <li class="<?php if ($page == 'login') {
                                     echo 'active';
                                 } ?>">
-                                
-                        <a class="nav-link" <?php if(isset($_SESSION['login_user'])){ echo($_SESSION['login_user']); } ?> href="signin.php"> Login </a>
+                        <a class="nav-link" <?php if(isset($_SESSION['login_user'])){ echo($_SESSION['login_user']); } ?> href="login.php"> Login </a>
                     </li>
                 </ul>
             </div>

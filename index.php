@@ -3,6 +3,7 @@
 $title = "WatchUs Incorporated";
 $page = "index";
 include "includes/header.php";
+require_once "signup/createdb.php";
 
 ?>
 
@@ -70,47 +71,33 @@ include "includes/header.php";
     <h1 class="text-center"> About Us</h1>
     <div class="row">
         <div class="col-lg-12">
-            <p> uis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                Cras
-                mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
-                mauris
-                condimentum nibh
+            <p class="lead text-center"> A passionate start up set on delivering the world's best curation of 
+                selected watches ranging from three different types right to your doorstep with the 
+                utmost best of both customer support and after sales service. 
+                <br>Based in Malaysia and providing world wide delivery 24/7.
             </p>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row my-5">
         <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <h3> Skrt </h3>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh
-                ultricies
-                vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
-                commodo cursus
-                magna.</p>
+            <img class="rounded-circle" src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>David Chow</h2>
+            <h3> CTO </h3>
+       
 
         </div>
         <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <h3> yeet </h3>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                Cras
-                mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
-                mauris
-                condimentum nibh.</p>
-
+            <img class="rounded-circle" src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>Wong Meng Leong</h2>
+            <h3> CEO </h3>
+        
         </div>
         <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <h3> Skrt Skrt </h3>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id
-                ligula porta
-                felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-                ut fermentum
-                massa justo sit amet risus.</p>
+            <img class="rounded-circle" src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" alt="Generic placeholder image" width="140" height="140">
+            <h2>Lee Chee Shuen</h2>
+            <h3> CFO </h3>
+      
 
         </div>
     </div>

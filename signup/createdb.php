@@ -1,8 +1,3 @@
-<html>
-<head>
-<title>Connecting MySQLi Server</title>
-</head>
-<body>
 <?php
 $dbhost = 'localhost';
 $dbuser = 'root';
@@ -14,20 +9,16 @@ if(!$conn){
     echo 'Connected failure<br>';
 }
 
-echo 'Connected successfully<br>';
-$sql = "CREATE DATABASE db";
+
+$sql = "CREATE DATABASE WatchUs";
 
 if (mysqli_query($conn,$sql)){
-    echo "Database created successfully";
+
 } else{
-    echo "Error creating database: " . mysqli_error($conn);
+     mysqli_error($conn);
 }
 
 mysqli_close($conn);
 
 ?>
-
-</body>
-
-
-</html>
+ 
