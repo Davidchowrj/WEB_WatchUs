@@ -40,7 +40,7 @@ if ( ($setemail==true && $setpass==true)){
     
     
     
-    $sql = "INSERT INTO table3(email, password) VALUES ('".$_POST["newemail"]."' , '".$_POST["newpassword"]."')";
+    $sql = "INSERT INTO table3(email, password, registration_date) VALUES ('".$_POST["newemail"]."' , '".SHA1($_POST["newpassword"])."', NOW())";
     
     
     if (mysqli_query($conn,$sql)){
