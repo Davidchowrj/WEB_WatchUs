@@ -10,7 +10,7 @@ if(!empty($_GET["action"])) {
         case "add":
             if(!empty($_POST["quantity"])) {
                 $productByCode = $db_handle->runQuery("SELECT * FROM product WHERE code='" . $_GET["code"] . "'");
-                $itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"]));
+                $itemArray = array($productByCode[0]["code"]=>array('image'=>$productByCode[0]["image"], 'name'=>$productByCode[0]["name"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"]));
                 
                 if(!empty($_SESSION["cart_item"])) {
                     if(in_array($productByCode[0]["code"],$_SESSION["cart_item"])) {
@@ -65,6 +65,7 @@ if(isset($_SESSION["cart_item"])){
 ?>	
 <table>
 	<tr>
+		<th><strong>item</strong></th>
 		<th><strong>Name</strong></th>
 		<th><strong>Code</strong></th>
 		<th><strong>Quantity</strong></th>
@@ -75,6 +76,7 @@ if(isset($_SESSION["cart_item"])){
 foreach ($_SESSION["cart_item"] as $item){
     ?>	
 		<tr>
+		<td><img src="<?php echo $item["image"];?>"></td>
 		<td><strong><?php echo $item["name"];?></strong></td>
 		<td><?php echo $item["code"];?></td>
 		<td><?php echo $item["quantity"];?></td>
