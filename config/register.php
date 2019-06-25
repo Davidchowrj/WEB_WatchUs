@@ -13,7 +13,7 @@ $setemail=false;
 
 // Preg matching for form input 
 
-
+if(isset($_POST['test'])){
 if (preg_match('/^' . $newemail_pattern . '$/', $newemail)){
     echo "Your email is a valid format.";
     $setemail=true;
@@ -62,4 +62,5 @@ if ( ($setemail==true && $setpass==true)){
     $conn->close();
 }
 
+}
 ?>

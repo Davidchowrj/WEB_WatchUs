@@ -3,15 +3,13 @@
 $title = "Customer Login | WatchUs";
 $page = "login";
 
-// Include config files 
-include "includes/header.php";
-include "signup/connectdb.php";
 
+include "includes/header.php";
 
 // Checks if user already logged in 
 
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: welcome.php");
+if (isset($_SESSION["login_user"]) && $_SESSION["login_user"] === true) {
+    header(" config/home.php");
     exit;
 }
 
@@ -42,7 +40,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <form role="form" action="" method="Post">
+                    <form role="form" action="register.php" method="Post">
                         <fieldset>
                             <h2 class="text-left my-3">Not registered yet? Create an account now! </h2>
                             <p> Creating an account with us is simple & you will then benefit from:
@@ -55,33 +53,9 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 
                             <!-- Register form input -->
                             <div class="row">
-                                <div class="col form-label-group">
-                                    <!--
-                                    <input type="text" name="FName" id="FName" class="form-control input-lg" placeholder="First Name">
-                                    <label for="FName" class="pl-4"> First Name </label>
-                                        -->
-                                </div>
-                                <div class="col form-label-group">
-                                     <!--
-                                    <input type="text" name="LName" id="LName" class="form-control input-lg" placeholder="Last Name">
-                                    <label for="LName" class="pl-4"> Last Name </label>\
--->
-                                </div>
-                            </div>
-                            <div class="form-label-group">
-                                 <!--
-                                <input type="email" name="email" id="newemail" class="form-control input-lg" placeholder="Email Address">
-                                <label for="newemail"> Email </label>
--->
-                            </div>
-                            <div class="form-label-group">
-                                 <!--
-                                <input type="password" name="password" id="newpassword" class="form-control input-lg" placeholder="Password">
-                                <label for="newpassword"> Password </label>
--->
                             </div>
                             <div>
-                                <input type="submit" class="btn btn-primary w-100" href="register.php" value="Register">
+                                <input type="submit" class="btn btn-primary w-100" onclick="register.php" value="Register">
                             </div>
                         </fieldset>
                     </form>
@@ -107,11 +81,6 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                             </div>
                             <div>
                                 <input type="submit" class="btn btn-primary w-100" href="" value="Sign In">
-
-                                <?php
-                                session_start();
-                                ?>
-
                             </div>
                         </fieldset>
                     </form>
@@ -128,14 +97,35 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 <?php
 if (isset($_POST['signin'])) {
 
-    require('mysqli_connect.php');
+    // Prag match variables 
+
+    $password = $_POST["password"];
+    $password_pattern = "/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W).{5,15}$/";
+    $email = $_POST["email"];
+    $email_pattern = "/^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/";
+    $setpass = false;
+    $setemail = false;
+
+    if (preg_match('/^' . $email_pattern . '$/', $email)) {
+        echo "Your email is a valid format.";
+        $setemail = true;
+        
+    } else {
+        echo "Invalid email.";
+    }
+
+
+    if (preg_match($newpassword_pattern, $newpassword)) {
+        echo "Your password is valid.";
+        $setpass = true;
+    }
+
+        require_once('config/connectdb.php');
 
     if (!$conn) {
-        echo 'Connected failure<br>';
-    } else {
-
-        echo 'Connected successfully<br>';
+        echo 'Connection failure<br>'  . mysqli_connect_error();
     }
+
     session_start();
 
     $email = $_POST['email'];

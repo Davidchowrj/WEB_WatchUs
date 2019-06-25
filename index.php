@@ -3,6 +3,7 @@
 $title = "WatchUs Incorporated";
 $page = "index";
 include "includes/header.php";
+require_once "config/createdb.php";
 
 ?>
 
