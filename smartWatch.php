@@ -4,9 +4,10 @@ $db_handle = new DBController();
 $title = "Smart Watches | WatchUS";
 $page = "analog";
 include "includes/header.php";
-require('login.php');
-if($_SESSION['login_user']=='admin@gg.com'){
-    echo"<script language='javascript' type='text/javascript'> location.href='adminsmartWatch.php'</script>";
+if(isset($_SESSION['login_user'])){
+    if(($_SESSION['login_user'])=='admin@gg.com'){
+        echo "<script language='javascript' type='text/javascript'> location.href = 'adminanalog.php'</script>";
+    }
 }
 ?>
 
