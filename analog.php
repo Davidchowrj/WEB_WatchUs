@@ -5,6 +5,10 @@ $db_handle = new DBController();
 $title = "Analog Watches | WatchUS";
 $page = "analog";
 include "includes/header.php";
+require('login.php');
+if($_SESSION['login_user']=='admin@gg.com'){
+    echo "<script language='javascript' type='text/javascript'> location.href = 'adminanalog.php'</script>";
+}
 ?>
 <!-- Video display section -->
 <section>
@@ -25,7 +29,7 @@ include "includes/header.php";
 
 
 <!-- Product Layout -->
-<div class="main">
+<div class="main pb-5">
     <div class="container product">
         <h1 class="text-left mt-5 mb-0 "> Analog Watches</h1>
         <hr class="bg-primary mb-2 mt-0 d-inline-block mx-auto w-25">
@@ -71,7 +75,7 @@ include "includes/header.php";
                     <img src="" class="imagepreview" style="width: 100%;">
                 </div>
                 <div class="modal-footer border-0 mt-4">
-                    <button class="btn btn-secondary btn-rounded btn-md ml-4 text-center" href="" type="button">Add to Cart</button>
+                    <button class="btn btn-secondary btn-rounded btn-md ml-4 text-center" href="" type="button">Add tto Cart</button>           
                     <button class="btn btn-outline-danger btn-rounded btn-md ml-4 text-center" data-dismiss="modal" type="button">Close</button>
                 </div>
             </div>
