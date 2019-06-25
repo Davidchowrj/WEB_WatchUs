@@ -175,6 +175,7 @@
             letter-spacing: .05em;
             font-weight: 400;
             font-weight: var(--weight-regular);
+            text-shadow: rgb(12, 12, 12) 0px 0px 15px;
         }
         
         .masthead {
@@ -188,6 +189,20 @@
         
         .masthead .container h1 {
             font-size: 60px;
+        }
+        
+        .cartheader {
+            height: 50vh;
+            min-height: 450px;
+            background-image: url('../images/cart.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .cartheader .container h1 {
+            font-size: 60px;
+            text-shadow: rgb(12, 12, 12) 0px 0px 15px;
         }
         /* Services section styling */
         
@@ -374,4 +389,12 @@
         .lead {
             font-size: 1.5rem;
             font-weight: 350;
+        }
+        
+        .cartcontainer {
+            margin-bottom: 5rem;
+        }
+        
+        .checkoutcontainer {
+            max-width: 960px;
         }

@@ -49,9 +49,15 @@
                             Collection
                         </a>
                         <div class="dropdown-menu">
-                        	<a class="dropdown-item" href="./analog.php">Analog Watches</a>
-                            <a class="dropdown-item" href="./smartWatch.php">Smart Watches</a>
-                            <a class="dropdown-item" href="./DigitalWatch.php">Digital Watches</a>
+                        	<a class="dropdown-item <?php if ($page == 'index') {
+                                    echo 'active';
+                                } ?>> " href="./analog.php">Analog Watches</a>
+                            <a class="dropdown-item <?php if ($page == 'index') {
+                                    echo 'active';
+                                } ?>> " href="./smartWatch.php">Smart Watches</a>
+                            <a class="dropdown-item <?php if ($page == 'index') {
+                                    echo 'active';
+                                } ?>> " href="./DigitalWatch.php"> Digital Watches</a>
                         </div>
                     </li>
                     <li class="<?php if ($page == 'about') {
@@ -67,7 +73,7 @@
                     <li class="<?php if ($page == 'cart') {
                                     echo 'active';
                                 } ?>">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link" href="./cart.php">Cart</a>
                     </li >
                     <li class="<?php if ($page == 'login') {
                                     echo 'active';

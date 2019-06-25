@@ -29,7 +29,7 @@ include "includes/header.php";
     <div class="container-fluid mb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-12">
                     <form role="form" action="" method="Post">
                         <fieldset>
                             <!-- Register form input -->
@@ -56,8 +56,14 @@ include "includes/header.php";
                                 <input type="password" name="password" id="newpassword" class="form-control input-lg" placeholder="Password">
                                 <label for="newpassword"> Password </label>
                             </div>
-                            <div>
-                                <input type="submit" class="btn btn-primary w-100" href="register.php" value="Register">
+
+                            <div class="row my-5">
+                                <div class="col-6">
+                                    <input type="submit" name="register" class="btn btn-primary btn-block" href="register.php" value="Register">
+                                </div>
+                                <div class="col-6">
+                                <a class="btn btn-light btn-block" href="javascript:history.back()">Go Back </a>
+                                </div>
                             </div>
                         </fieldset>
                     </form>
@@ -73,7 +79,7 @@ include "includes/header.php";
             $Lname = $_POST['Lname'];
             $Lname_pattern = '/^[a-zA-z0-9]{3,10}$/';
             $newpassword = $_POST["newpassword"];
-            $newpassword_pattern = "/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W).{5,15}$/";
+            $newpassword_pattern = "/^(?=.\d)(?=.[A-Z])(?=.[a-z])(?=.\W).{5,15}$/";
             $newemail = $_POST["newemail"];
             $newemail_pattern = "/^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/";
             $setpass = false;

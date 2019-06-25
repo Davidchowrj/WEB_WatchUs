@@ -35,27 +35,30 @@ include "includes/header.php";
         </div>
 
         <div class="row">
-        <?php
-	    $product_array = $db_handle->runQuery("SELECT * FROM product WHERE code LIKE 'An%' ORDER BY id ASC");
-	    if (!empty($product_array)) { 
-		  foreach($product_array as $key=>$value){
-	   ?>
-            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                <div class="card h-100 border-0">
-                <form method="post" action="cart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-                    <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="<?php echo $product_array[$key]["image"]; ?>">
-                    </a>
-                    <div class="card-body">
-                        <h4 class="card-title"><?php echo $product_array[$key]["name"]; ?></h4>
-                        <p class="card-text"><?php echo "RM ".$product_array[$key]["price"]; ?></p>
-                        <div><input type="text" name="quantity" value="1" size="2" /><p></p><input type="submit" value="add to cart" class="btn btn-primary"/></div>
+            <?php
+            $product_array = $db_handle->runQuery("SELECT * FROM product WHERE code LIKE 'An%' ORDER BY id ASC");
+            if (!empty($product_array)) {
+                foreach ($product_array as $key => $value) {
+                    ?>
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                        <div class="card h-100 border-0">
+                            <form method="post" action="cart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+                                <a href="#" class="pop">
+                                    <img class="card-img-top img-fluid w-50" src="<?php echo $product_array[$key]["image"]; ?>">
+                                </a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><?php echo $product_array[$key]["name"]; ?></h4>
+                                    <p class="card-text"><?php echo "RM " . $product_array[$key]["price"]; ?></p>
+                                    <div> Quantity
+                                        <input type="number" name="quantity" value="1" size="2" class="text-center mb-3 w-25" /><br>
+                                        <input type="submit" value="Add to Cart" class="btn btn-primary" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </form>
-                </div>
-            </div>
-            <?php 
-		      }
+                <?php
+            }
         }
         ?>
         </div>
@@ -71,8 +74,9 @@ include "includes/header.php";
                     <img src="" class="imagepreview" style="width: 100%;">
                 </div>
                 <div class="modal-footer border-0 mt-4">
-                    <button class="btn btn-secondary btn-rounded btn-md ml-4 text-center" href="" type="button">Add to Cart</button>
-                    <button class="btn btn-outline-danger btn-rounded btn-md ml-4 text-center" data-dismiss="modal" type="button">Close</button>
+                    <form method="post" action="cart.php?action=add&code=">
+                        <input type="submit" value="Add to Cart" class="btn btn-primary" />
+                        <button class="btn btn-outline-danger btn-rounded btn-md ml-4 text-center" data-dismiss="modal" type="button">Close</button>
                 </div>
             </div>
         </div>

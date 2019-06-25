@@ -13,16 +13,7 @@ $conn = mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could n
 mysqli_set_charset($conn, 'utf8');
 
 
-$sql = "CREATE TABLE customers(
-    id INT AUTO_INCREMENT, 
-    Fname VARCHAR(20) NOT NULL,
-    Lname VARCHAR(20) NOT NULL,
-    email VARCHAR(20) NOT NULL,
-    password VARCHAR(16) NOT NULL,
-    registration_date DATETIME,
-    primary key(id))";
 
 mysqli_close($conn);
 
-?>
 ?>

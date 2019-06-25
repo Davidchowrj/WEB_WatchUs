@@ -16,10 +16,8 @@ $sql = "CREATE TABLE customers(
     registration_date DATETIME,
     primary key(id))";
 
-if (mysqli_query($conn,$sql)){
-    echo "Table created successfully";
-} else{
-    echo "Table is not created successfully: ";
+if (!mysqli_query($conn,$sql)){
+    mysqli_connect_error($sql);
 }
 
 mysqli_close($conn);
