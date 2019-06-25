@@ -3,7 +3,7 @@ class DBController {
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";
-	private $database = "db2";
+	private $database = "watchus";
 	
 	function __construct() {
 		$conn = $this->connectDB();

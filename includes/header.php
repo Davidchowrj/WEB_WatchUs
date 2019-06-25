@@ -5,7 +5,7 @@
 
     <title>
         <?php
-
+        session_start();
         if (isset($title) && !empty($title)) {
 
             echo $title;
@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="./styles/theme.css">
     <link rel="stylesheet" href="./styles/stylesheet.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
 
 <body>
     <header>
@@ -65,11 +67,24 @@
                     <li class="<?php if ($page == 'cart') {
                                     echo 'active';
                                 } ?>">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link" href="cart.php">Cart</a>
+                    </li >
+                    <li class="<?php if ($page == 'login') {
+                                    echo 'active';
+                            
+                                } ?>">
+                        <a class="nav-link" href="login.php"> Login </a>
+                       
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> Login </a>
+                    <li class="<?php if ($page == 'logout') {
+                                    echo 'active';
+                            
+                                } ?>">
+                        <a class="nav-link" href="logout.php"> Logout </a>
                     </li>
+                    <li><p style="color:white;padding-top:5px;"><?php if(isset($_SESSION['login_user'])){ echo($_SESSION['login_user']); } ?></p>
+                    </li>
+                    
                 </ul>
             </div>
         </nav>
