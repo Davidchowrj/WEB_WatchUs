@@ -1,11 +1,10 @@
 <?php
-session_start();
+
 $title = "Customer Login | WatchUs";
 $page = "login";
 
 
 include "includes/header.php";
-
 // Checks if user already logged in
 
 if (isset($_SESSION["login_user"]) && $_SESSION["login_user"] === true) {
@@ -33,6 +32,8 @@ if (isset($_SESSION["login_user"]) && $_SESSION["login_user"] === true) {
 <div class="logincontainer">
     <div class="row justify-content-center mb-4">
         <h1 class="text-center "> Log in or create a new WatchUs account </h1>
+
+        </p>
     </div>
     <div class="container-fluid mb-5">
         <div class="container">
@@ -77,15 +78,10 @@ if (isset($_SESSION["login_user"]) && $_SESSION["login_user"] === true) {
                                 <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
                                 <label for="password"> Password </label>
                             </div>
-                            <div class="form-row">
-                                <div class="col-6">
-                                    <input type="submit" name="signin" class="btn btn-primary w-100" href="" value="Sign In">
-                                </div>
-
-                                <div class="col-6">
-                                    <input type="submit" name="signout" class="btn btn-primary w-100" href="" value="Sign Out">
-                                </div>
+                            <div>
+                                <input type="submit" name="signin" class="btn btn-primary w-100" href="" value="Sign In">
                             </div>
+                            
                         </fieldset>
                     </form>
                 </div>
@@ -101,61 +97,45 @@ if (isset($_SESSION["login_user"]) && $_SESSION["login_user"] === true) {
 <?php
 if (isset($_POST['signin'])) {
 
-    // Prag match variables 
+    session_start();
 
-    /* $password = $_POST["password"];
-    $password_pattern = "/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W).{5,15}$/";
-    $email = $_POST["email"];
-    $email_pattern = "\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}";
-    $setpass = false;
-    $setemail = false;
-
-    if (preg_match('/^' . $email_pattern . '$/', $email)) {
-        echo "Your email is a valid format.";
-        $setemail = true;
+    DEFINE ('DB_HOST', 'localhost');
+    DEFINE ('DB_USER', 'root');
+    DEFINE ('DB_PASSWORD', '');
+    DEFINE ('DB_NAME', 'WatchUs');
         
-    } else {
-        echo "Invalid email.";
-    }
-
-
-    if (preg_match($password_pattern, $password)) {
-        echo "Your password is valid.";
-        $setpass = true;
-    }*/
-
-
-
-
-    DEFINE('DB_HOST', 'localhost');
-    DEFINE('DB_USER', 'root');
-    DEFINE('DB_PASSWORD', '');
-    DEFINE('DB_NAME', 'WatchUs');
-
-    $db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Could not connect to MySQL: ' . mysqli_connect_error());
-
+    $db = mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
+        
     mysqli_set_charset($db, 'utf8');
-
+        
     $email = $_POST['email'];
     $password = $_POST['password'];
+    /*setcookie("email", $email, time() + 10);
+    
+	if(isset($_COOKIE["email"]))
+	{
+	    echo "Cookie set with value: ".$_COOKIE["username"];
+	}
+	else
+	{
+	    echo "cookie not set!";
+	}*/
 
-    $_SESSION['login_user'] = $email;
+    
 
     $query = mysqli_query($db, "SELECT email FROM customers WHERE email='$email' and password='$password'");
     if (mysqli_num_rows($query) != 0) {
+        $_SESSION['login_user'] = $email;
         echo "<script type='text/javascript'>alert('Login Successful')</script>";
+        echo "<script language='javascript' type='text/javascript'> location.href = 'index.php'</script>";
+        
     } else {
         echo "<script type='text/javascript'>alert('Username or Password Invalid!')</script>";
     }
 }
 
 
-if (isset($_POST['signout'])) {
 
-    unset($_SESSION['login_user']);
-    session_unset();
-    session_destroy();
-}
 
 
 
