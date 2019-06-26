@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $item_total = 0;
 $title = "Checkout | WatchUs ";
 $page = "Checkout ";
