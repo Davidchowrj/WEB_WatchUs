@@ -1,4 +1,10 @@
 <?php
+<<<<<<< HEAD
+
+||||||| merged common ancestors
+session_start();
+=======
+>>>>>>> c604d3417abd38e971a8ca9de71299139284a4e7
 require_once("dbcontroller.php");
 $db_handle = new DBController();
 $title = "Digital Watches | WatchUS";

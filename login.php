@@ -7,10 +7,6 @@ $page = "login";
 include "includes/header.php";
 // Checks if user already logged in
 
-if (isset($_SESSION["login_user"]) && $_SESSION["login_user"] === true) {
-    header(" config/home.php");
-    exit;
-}
 
 ?>
 
@@ -123,7 +119,7 @@ if (isset($_POST['signin'])) {
 
     
 
-    $query = mysqli_query($db, "SELECT email FROM customers WHERE email='$email' and password='$password'");
+    $query = mysqli_query($db, "SELECT email FROM customers WHERE email='$email' and password=('$password')");
     if (mysqli_num_rows($query) != 0) {
         $_SESSION['login_user'] = $email;
         echo "<script type='text/javascript'>alert('Login Successful')</script>";
