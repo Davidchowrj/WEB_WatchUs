@@ -8,21 +8,21 @@
         <h5 class="mt-3">Products</h5>
         <hr class="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25">
         <ul class="list-unstyled">
-          <li><a href="">Smart Watches</a></li>
-          <li><a href="">Digital Watches</a></li>
+          <li><a href="./smartWatch.php">Smart Watches</a></li>
+          <li><a href="./DigitalWatch.php">Digital Watches</a></li>
           <li><a href="./analog.php">Analog Watches</a></li>
         </ul>
       </div>
 
 
       <div class="col-md-4 col-lg-4 col-xl-2 mx-auto">
-        <h5 class="mt-3">Services</h5>
+        <h5 class="mt-3">Quick Access</h5>
         <hr class="bg-dark mb-2 mt-0 d-inline-block mx-auto w-25">
         <ul class="list-unstyled">
-          <li><a href="">Link 1</a></li>
-          <li><a href="">Link 2</a></li>
-          <li><a href="">Link 3</a></li>
-          <li><a href="">Link 4</a></li>
+          <li><a href="register.php">Register</a></li>
+          <li><a href="login.php">Login</a></li>
+          <li><a href="cart.php">Cart</a></li>
+          <li><a href="checkout.php">Checkout</a></li>
         </ul>
       </div>
 

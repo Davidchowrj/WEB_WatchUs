@@ -136,7 +136,7 @@ include "includes/header.php";
 
 
 
-                $sql = "INSERT INTO customers(Fname, Lname, email, password, registration_date) VALUES ('" . $_POST["FName"] . "', '" . $_POST["LName"] . "', '" . $_POST["newemail"] . "' , '" . SHA1($_POST["newpassword"]) . "', NOW())";
+                $sql = "INSERT INTO customers(Fname, Lname, email, password, registration_date) VALUES ('" . $_POST["FName"] . "', '" . $_POST["LName"] . "', '" . $_POST["newemail"] . "' , '" . ($_POST["newpassword"]) . "', NOW())";
 
 
                 if (mysqli_query($conn, $sql)) {
