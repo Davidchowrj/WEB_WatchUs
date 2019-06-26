@@ -3,7 +3,7 @@
 $title = "Register | WatchUs";
 $page = "register";
 
-// Include config files 
+// Include config files
 include "includes/header.php";
 ?>
 
@@ -29,7 +29,7 @@ include "includes/header.php";
     <div class="container-fluid mb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-5">
                     <form role="form" action="" method="Post">
                         <fieldset>
                             <!-- Register form input -->
@@ -48,22 +48,16 @@ include "includes/header.php";
                             </div>
                             <div class="form-label-group">
 
-                                <input type="email" name="email" id="newemail" class="form-control input-lg" placeholder="Email Address">
+                                <input type="email" name="newemail" id="newemail" class="form-control input-lg" placeholder="Email Address">
                                 <label for="newemail"> Email </label>
                             </div>
                             <div class="form-label-group">
 
-                                <input type="password" name="password" id="newpassword" class="form-control input-lg" placeholder="Password">
+                                <input type="password" name="newpassword" id="newpassword" class="form-control input-lg" placeholder="Password">
                                 <label for="newpassword"> Password </label>
                             </div>
-
-                            <div class="row my-5">
-                                <div class="col-6">
-                                    <input type="submit" name="register" class="btn btn-primary btn-block" href="register.php" value="Register">
-                                </div>
-                                <div class="col-6">
-                                <a class="btn btn-light btn-block" href="javascript:history.back()">Go Back </a>
-                                </div>
+                            <div>
+                                <input type="submit" name="register" class="btn btn-primary w-100" href="register.php" value="Register">
                             </div>
                         </fieldset>
                     </form>
@@ -72,23 +66,40 @@ include "includes/header.php";
         </div>
 
         <?php
-        if (isset($_POST['register'])) {
+        if (isset($_POST["register"])) {
 
-            $Fname = $_POST['fname'];
+            $Fname = $_POST['FName'];
             $Fname_pattern = '/^[a-zA-z0-9]{3,10}$/';
-            $Lname = $_POST['Lname'];
+            $Lname = $_POST['LName'];
             $Lname_pattern = '/^[a-zA-z0-9]{3,10}$/';
             $newpassword = $_POST["newpassword"];
-            $newpassword_pattern = "/^(?=.\d)(?=.[A-Z])(?=.[a-z])(?=.\W).{5,15}$/";
+            $newpassword_pattern = "/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W).{5,15}$/";
             $newemail = $_POST["newemail"];
-            $newemail_pattern = "/^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/";
+            $newemail_pattern = "\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}";
             $setpass = false;
             $setemail = false;
 
 
             // Preg matching for form input 
 
-
+            if (preg_match($Fname_pattern, $Fname)) {
+                echo "Your first name is valid.";
+                $setpass = true;
+            } else {
+                echo "Invalid first name <br>";
+            }
+            
+            echo "<br><br>";
+            
+            if (preg_match($Lname_pattern, $Lname)) {
+                echo "Your last name is valid.";
+                $setpass = true;
+            } else {
+                echo "Invalid last name <br>";
+            }
+            
+            echo "<br><br>";
+            
             if (preg_match('/^' . $newemail_pattern . '$/', $newemail)) {
                 echo "Your email is a valid format.";
                 $setemail = true;
@@ -121,7 +132,7 @@ include "includes/header.php";
 
 
 
-                $sql = "INSERT INTO customers(email, password, registration_date) VALUES ('" . $_POST["newemail"] . "' , '" . SHA1($_POST["newpassword"]) . "', NOW())";
+                $sql = "INSERT INTO customers(Fname, Lname, email, password, registration_date) VALUES ('" . $_POST["FName"] . "', '" . $_POST["LName"] . "', '" . $_POST["newemail"] . "' , '" . SHA1($_POST["newpassword"]) . "', NOW())";
 
 
                 if (mysqli_query($conn, $sql)) {

@@ -4,6 +4,11 @@ $db_handle = new DBController();
 $title = "Smart Watches | WatchUS";
 $page = "smartwatch";
 include "includes/header.php";
+if(isset($_SESSION['login_user'])){
+    if(($_SESSION['login_user'])=='admin@gg.com'){
+        echo "<script language='javascript' type='text/javascript'> location.href = 'adminanalog.php'</script>";
+    }
+}
 ?>
 
 <!-- Video display section -->

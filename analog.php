@@ -1,10 +1,20 @@
 <?php
+<<<<<<< HEAD
 
+||||||| merged common ancestors
+session_start();
+=======
+>>>>>>> c604d3417abd38e971a8ca9de71299139284a4e7
 require_once("dbcontroller.php");
 $db_handle = new DBController();
 $title = "Analog Watches | WatchUS";
 $page = "analog";
 include "includes/header.php";
+if(isset($_SESSION['login_user'])){
+    if(($_SESSION['login_user'])=='admin@gg.com'){
+        echo "<script language='javascript' type='text/javascript'> location.href = 'adminanalog.php'</script>";
+    }
+}
 ?>
 <!-- Video display section -->
 <section>
