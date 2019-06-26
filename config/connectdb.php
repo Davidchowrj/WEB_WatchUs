@@ -11,9 +11,4 @@ $conn = mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could n
 
 // Set the encoding...
 mysqli_set_charset($conn, 'utf8');
-
-
-
-mysqli_close($conn);
-
 ?>

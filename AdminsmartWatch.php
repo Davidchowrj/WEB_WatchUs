@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once("dbcontroller.php");
 $db_handle = new DBController();
 $title = "Analog Watches | WatchUS";
@@ -27,7 +26,7 @@ include "includes/header.php";
                 <div class="card h-100 border-0">
                 <form method="post" action="cart.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
                     <a href="#" class="pop">
-                        <img class="card-img-top img-fluid" src="<?php echo $product_array[$key]["image"]; ?>">
+                        <img class="card-img-top img-fluid w-50" src="<?php echo $product_array[$key]["image"]; ?>">
                     </a>
                     <div class="card-body">
                         <h4 class="card-title"><?php echo $product_array[$key]["name"]; ?></h4>

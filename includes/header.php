@@ -5,7 +5,7 @@
 
     <title>
         <?php
-
+        session_start();
         if (isset($title) && !empty($title)) {
 
             echo $title;
@@ -49,15 +49,9 @@
                             Collection
                         </a>
                         <div class="dropdown-menu">
-                        	<a class="dropdown-item <?php if ($page == 'index') {
-                                    echo 'active';
-                                } ?>> " href="./analog.php">Analog Watches</a>
-                            <a class="dropdown-item <?php if ($page == 'index') {
-                                    echo 'active';
-                                } ?>> " href="./smartWatch.php">Smart Watches</a>
-                            <a class="dropdown-item <?php if ($page == 'index') {
-                                    echo 'active';
-                                } ?>> " href="./DigitalWatch.php"> Digital Watches</a>
+                        	<a class="dropdown-item" href="./analog.php">Analog Watches</a>
+                            <a class="dropdown-item" href="./smartWatch.php">Smart Watches</a>
+                            <a class="dropdown-item" href="./DigitalWatch.php">Digital Watches</a>
                         </div>
                     </li>
                     <li class="<?php if ($page == 'about') {
@@ -73,16 +67,25 @@
                     <li class="<?php if ($page == 'cart') {
                                     echo 'active';
                                 } ?>">
-                        <a class="nav-link" href="./cart.php">Cart</a>
+                        <a class="nav-link" href="cart.php">Cart</a>
                     </li >
                     <li class="<?php if ($page == 'login') {
                                     echo 'active';
+                            
                                 } ?>">
-                        <a class="nav-link" <?php if(isset($_SESSION['login_user'])){ echo($_SESSION['login_user']); } ?> href="login.php"> Login </a>
+                        <a class="nav-link" href="login.php"> Login </a>
+                       
                     </li>
+                    <li class="<?php if ($page == 'logout') {
+                                    echo 'active';
+                            
+                                } ?>">
+                        <a class="nav-link" href="logout.php"> Logout </a>
+                    </li>
+                    <li><p style="color:white;padding-top:5px;"><?php if(isset($_SESSION['login_user'])){ echo($_SESSION['login_user']); } ?></p>
+                    </li>
+                    
                 </ul>
             </div>
         </nav>
     </header>
-
-

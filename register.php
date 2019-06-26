@@ -29,7 +29,7 @@ include "includes/header.php";
     <div class="container-fluid mb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-12">
                     <form role="form" action="" method="Post">
                         <fieldset>
                             <!-- Register form input -->
@@ -56,8 +56,13 @@ include "includes/header.php";
                                 <input type="password" name="newpassword" id="newpassword" class="form-control input-lg" placeholder="Password">
                                 <label for="newpassword"> Password </label>
                             </div>
-                            <div>
-                                <input type="submit" name="register" class="btn btn-primary w-100" href="register.php" value="Register">
+                            <div class="row my-5">
+                                <div class="col-6">
+                                    <input type="submit" name="register" class="btn btn-primary w-100" href="register.php" value="Register">
+                                </div>
+                                <div class="col-6">
+                                    <a class="btn btn-light btn-block" href="javascript:history.back()"> Go Back </a>
+                                </div>
                             </div>
                         </fieldset>
                     </form>
@@ -83,25 +88,24 @@ include "includes/header.php";
             // Preg matching for form input 
 
             if (preg_match($Fname_pattern, $Fname)) {
-                echo "Your first name is valid.";
                 $setpass = true;
             } else {
                 echo "Invalid first name <br>";
             }
-            
+
             echo "<br><br>";
-            
+
             if (preg_match($Lname_pattern, $Lname)) {
-                echo "Your last name is valid.";
+
                 $setpass = true;
             } else {
                 echo "Invalid last name <br>";
             }
-            
+
             echo "<br><br>";
-            
+
             if (preg_match('/^' . $newemail_pattern . '$/', $newemail)) {
-                echo "Your email is a valid format.";
+
                 $setemail = true;
             } else {
                 echo "Invalid email.";
@@ -110,7 +114,7 @@ include "includes/header.php";
             echo "<br><br>";
 
             if (preg_match($newpassword_pattern, $newpassword)) {
-                echo "Your password is valid.";
+
                 $setpass = true;
             } else {
                 echo "Invalid password, your password must be between 5 to 15 characters 
@@ -132,11 +136,11 @@ include "includes/header.php";
 
 
 
-                $sql = "INSERT INTO customers(Fname, Lname, email, password, registration_date) VALUES ('" . $_POST["FName"] . "', '" . $_POST["LName"] . "', '" . $_POST["newemail"] . "' , '" . SHA1($_POST["newpassword"]) . "', NOW())";
+                $sql = "INSERT INTO customers(Fname, Lname, email, password, registration_date) VALUES ('" . $_POST["FName"] . "', '" . $_POST["LName"] . "', '" . $_POST["newemail"] . "' , '" . ($_POST["newpassword"]) . "', NOW())";
 
 
                 if (mysqli_query($conn, $sql)) {
-                    echo "New record created successfully";
+                    echo "Sucessfully registered a WatchUs member account";
                 } else {
                     echo "Error: " . $sql . "" . mysqli_error($conn);
                 }

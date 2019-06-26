@@ -1,5 +1,4 @@
 <?php
-session_start();
 $title = "Cart | WatchUs ";
 $page = "Cart ";
 include "includes/header.php";
@@ -134,7 +133,7 @@ if (isset($_SESSION["cart_item"])) {
 </div>
 <div class="row my-5">
     <div class="col-12 text-center">
-        <a class="btn btn-light" href="javascript:history.back()">Continue Shopping<a>
+        <a class="btn btn-light" href="analog.php">Continue Shopping<a>
                 <a class="btn btn-primary" href="checkout.php">Checkout</a>
     </div>
 </div>

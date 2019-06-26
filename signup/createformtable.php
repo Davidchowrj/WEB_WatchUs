@@ -1,20 +1,18 @@
-
+<html>
+<head>
+<title>Connecting MySQLi Server</title>
+</head>
+<body>
 <?php
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$dbname = "WatchUs";
+$dbname = "db";
 $conn = mysqli_connect($host,$user,$pass,$dbname);
 
 
-$sql = "CREATE TABLE customers(
-    id INT AUTO_INCREMENT, 
-    Fname VARCHAR(20) NOT NULL,
-    Lname VARCHAR(20) NOT NULL,
-    email VARCHAR(20) NOT NULL,
-    password VARCHAR(16) NOT NULL,
-    registration_date DATETIME,
-    primary key(id))";
+$sql = "CREATE TABLE table3(
+    id INT AUTO_INCREMENT, email VARCHAR(20) NOT NULL, password VARCHAR(16) NOT NULL, primary key(id))";
 
 if (mysqli_query($conn,$sql)){
     echo "Table created successfully";
