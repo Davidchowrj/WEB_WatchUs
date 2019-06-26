@@ -7,10 +7,6 @@ $page = "login";
 include "includes/header.php";
 // Checks if user already logged in
 
-if (isset($_SESSION["login_user"]) && $_SESSION["login_user"] === true) {
-    header(" config/home.php");
-    exit;
-}
 
 ?>
 
