@@ -398,3 +398,7 @@
         .checkoutcontainer {
             max-width: 960px;
         }
+        
+        .alert {
+            display: none;
+        }

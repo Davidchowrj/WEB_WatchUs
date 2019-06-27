@@ -1,4 +1,6 @@
 <?php
+
+
 $item_total = 0;
 $title = "Checkout | WatchUs ";
 $page = "Checkout ";
@@ -11,6 +13,7 @@ if (!empty($_GET["action"])) {
             if (!empty($_POST["quantity"])) {
                 $productByCode = $db_handle->runQuery("SELECT * FROM product WHERE code='" . $_GET["code"] . "'");
                 $itemArray = array($productByCode[0]["code"] => array('image' => $productByCode[0]["image"], 'name' => $productByCode[0]["name"], 'code' => $productByCode[0]["code"], 'quantity' => $_POST["quantity"], 'price' => $productByCode[0]["price"]));
+
 
                 if (!empty($_SESSION["cart_item"])) {
                     if (in_array($productByCode[0]["code"], $_SESSION["cart_item"])) {
@@ -26,6 +29,7 @@ if (!empty($_GET["action"])) {
                 }
             }
             break;
+
         case "remove":
             if (!empty($_SESSION["cart_item"])) {
                 foreach ($_SESSION["cart_item"] as $k => $v) {
@@ -44,8 +48,11 @@ if (!empty($_GET["action"])) {
 ?>
 
 
-<!--Start of checkout form -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+<!--Start of checkout form -->
 
 <div class="container">
     <div class="py-5 text-center">
@@ -74,24 +81,24 @@ if (!empty($_GET["action"])) {
                             <span class="text-success"> RM: <?php echo $item["price"]; ?></span>
 
 
-                        <?php
-                          $item_total += ($item["price"] * $item["quantity"]);
-                    }
-                    ?>
+                            <?php
+                            $item_total += ($item["price"] * $item["quantity"]);
+                        }
+                        ?>
                     </div>
                 </li>
 
-              
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Total Amount (RM)</span>
-                        <strong class="text-success"><?php echo $item_total ?></strong>
-                    </li>
-                </ul>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total Amount (RM)</span>
+                    <strong class="text-success"><?php echo $item_total ?></strong>
+                </li>
+            </ul>
 
 
             <?php
-        
-        ?>
+
+            ?>
 
         </div>
         <div class="col-md-8 order-md-1">
@@ -191,12 +198,22 @@ if (!empty($_GET["action"])) {
                         <label class="custom-control-label" for="cod">Cash On Delivery</label>
                     </div>
                 </div>
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                
+                    <strong>You have successfully checked out! </strong>
+
+                </div>
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Checkout</button>
+                <button class="btn btn-primary btn-lg btn-block mb-5" type="submit" id="checkout">Checkout</button>
             </form>
         </div>
     </div>
 </div>
+
+
+
+
 
 <!-- Script for error handling if form is empty (no preg match)-->
 <script>
@@ -204,7 +221,6 @@ if (!empty($_GET["action"])) {
         'use strict';
 
         window.addEventListener('load', function() {
-
 
             var forms = document.getElementsByClassName('needs-validation');
 
@@ -221,7 +237,9 @@ if (!empty($_GET["action"])) {
     })();
 </script>
 
+<script>
+    $("#checkout").click(function() {
 
-<?php
-include "includes/footer.php";
-?>
+        $(".alert").hide().show('medium');
+    });
+</script>
